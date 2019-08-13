@@ -11,8 +11,6 @@
                 v-model="primaryDrawer.model"
         >
             <AppBar></AppBar>
-
-
         </v-navigation-drawer>
 
         <v-app-bar :clipped-left="primaryDrawer.clipped" app>
@@ -23,21 +21,15 @@
             <v-toolbar-title>Welcome to Vuetify <small>by Edd Remonts</small></v-toolbar-title>
             <ToolBar></ToolBar>
         </v-app-bar>
-
-
-
-
-        <v-content class="blue darken-3">
+        <v-content class="pa-12">
             <v-layout row wrap >
                 <v-flex xs12>
-                    <div class="general-padding">
+                    <div class="pa-12">
                         <router-view />
                     </div>
                 </v-flex>
             </v-layout>
         </v-content>
-
-
         <v-footer
                 :inset="footer.inset"
                 app
@@ -72,9 +64,9 @@
                 this.primaryDrawer = {
                     model: null,
                     type: this.getVConfig.primaryDrawer ? this.getVConfig.primaryDrawer.type : 'default (no property)',
-                    clipped: this.getVConfig.primaryDrawer ? this.getVConfig.primaryDrawer.clipped : false,
+                    clipped: this.getVConfig.primaryDrawer ? this.getVConfig.primaryDrawer.clipped : true,
                     floating: this.getVConfig.primaryDrawer ? this.getVConfig.primaryDrawer.floating : false,
-                    mini: this.getVConfig.primaryDrawer ? this.getVConfig.primaryDrawer.mini : true,
+                    mini: this.getVConfig.primaryDrawer ? this.getVConfig.primaryDrawer.mini : false,
                 };
                 this.footer = {
                     inset: this.getVConfig.footer ? this.getVConfig.footer.inset : false,

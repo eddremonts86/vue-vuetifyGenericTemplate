@@ -1,7 +1,7 @@
 <template>
     <v-card class="primary">
         <v-card-title class="blue darken-3">
-            I am a module using "Props"
+            Module using "Props"
         </v-card-title>
         <v-card-text>
             <v-card class="mx-auto mt-4">
@@ -29,7 +29,6 @@
 
                         <v-list-item
                                 :key="item.title"
-                                @click=""
                                 v-else
                         >
                             <v-list-item-avatar>

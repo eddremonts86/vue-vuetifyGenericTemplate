@@ -9,21 +9,30 @@
                 <prop :list="list" :msg="msg"></prop>
             </v-flex>
 
-            <v-flex class="mt-1" xs6>
-                <div class="pa-1" v-for="item in list" xs6>
-                    <slots v-if="!item.divider && !item.header">
-                        <template v-slot:header>
-                            {{item.title}}
-                        </template>
-                        <img :src="item.avatar" class="img_round">
-                        <template v-slot:content>
-                            {{item.subtitle}}
-                        </template>
-                        <template v-slot:footer>
-                            {{item.contact}}
-                        </template>
-                    </slots>
-                </div>
+            <v-flex class="mt-5" xs6>
+                <v-card>
+                    <v-card-title class="blue darken-3">Module using "Slots"</v-card-title>
+                    <v-card-text class="blue darken-1">
+                        <div class="pa-1" v-for="item in list" :key="item.title" xs6>
+                            <slots v-if="!item.divider && !item.header">
+                                <template v-slot:header>
+                                    {{item.title}}
+                                    </template>
+                                <template v-slot:content>
+                                    <img :src="item.avatar" class="img_round"/>
+                                    {{item.subtitle}}
+                                    <v-card>
+                                        <v-card-title>Some text</v-card-title>
+                                        <v-card-text>Content</v-card-text>
+                                    </v-card>
+                                </template>
+                                <template v-slot:footer>
+                                    {{item.contact}}
+                                </template>
+                            </slots>
+                        </div>
+                    </v-card-text>
+                </v-card>
             </v-flex>
 
         </v-layout>
@@ -46,7 +55,7 @@
                         avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
                         title: 'Brunch this weekend?',
                         subtitle: "Ali Connors, I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
-                        contact: 'Please contact me !!!'
+                         contact: 'Please contact me !!!'
                     },
                     {divider: true, inset: true},
                     {
@@ -86,5 +95,7 @@
     .img_round {
         margin: 10px;
         border-radius: 100%;
+        width: 92px;
+        height: 92px;
     }
 </style>
