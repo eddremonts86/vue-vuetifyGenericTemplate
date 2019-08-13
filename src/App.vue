@@ -20,14 +20,24 @@
                     @click.stop="primaryDrawer.model = !primaryDrawer.model"
                     v-if="primaryDrawer.type !== 'permanent'"
             ></v-app-bar-nav-icon>
-            <v-toolbar-title>Edd Remonts</v-toolbar-title>
+            <v-toolbar-title>Welcome to Vuetify <small>by Edd Remonts</small></v-toolbar-title>
             <ToolBar></ToolBar>
         </v-app-bar>
 
-        <v-content>
-            {{primaryDrawer}}
-            <router-view/>
+
+
+
+        <v-content class="blue darken-3">
+            <v-layout row wrap >
+                <v-flex xs12>
+                    <div class="general-padding">
+                        <router-view />
+                    </div>
+                </v-flex>
+            </v-layout>
         </v-content>
+
+
         <v-footer
                 :inset="footer.inset"
                 app
@@ -39,8 +49,8 @@
 
 <script>
     import {mapGetters} from 'vuex'
-    import AppBar from "./components/appbar/appbar";
-    import ToolBar from "./components/toolbar/toolbar";
+    import AppBar from "@/components/appbar/appbar";
+    import ToolBar from "@/components/toolbar/toolbar";
 
     export default {
         components: {ToolBar, AppBar},

@@ -21,6 +21,11 @@ export default new Router({
       path: '/visual_config',
       name: 'visual configurations',
       component: () => import('@/components/visualConfiguration/visualConfiguration.vue')
+    },
+    {
+      path: '/it_example',
+      name: 'IT examples',
+      component: () => import('@/components/uiExample/interations.vue')
     }
   ]
 })
